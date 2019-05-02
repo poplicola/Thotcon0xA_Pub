@@ -13,9 +13,9 @@ Some quick notes about pins on the 0xA badge:
 //Jay to put in image that maps all of these to where they belong
 
 ## Getting Started with the Badge
-1. Install Arduino
-2. Install ESP32 board on Arduino platform
-3. Get audio library and include in project
+1. Download/Install [Arduino](https://www.arduino.cc/)
+2. Install [ESP32 board](https://github.com/espressif/arduino-esp32#installation-instructions) on Arduino platform (recommendation is to follow instructions under "Instructions for Boards Manager")
+3. Get audio library [XT_DAC_AUDIO](https://www.xtronical.com/the-dacaudio-library-download-and-installation/) and include in project
 
 ## LEDs (Hello World)
 There are six backlit LEDs on the Thotcon 0xA badge. An example of how to activate these LEDs and utilize them is located in the NARF directory of this GitHub.
@@ -29,8 +29,18 @@ The Thotcon 0xA badge comes with a microphone that allows for streaming audio. A
 Also note that all audio files must be converted before being uploaded to the badge. A brief explanation of how to convert audio for the badge follows.
 
 ### Converting Audio for the Badge
+1. Download [Audacity](https://sourceforge.net/projects/audacity/)
+2. Download a hex editor (suggestions for Mac, Linux, and Windows)
+3. Open file in Audacity and convert to wav by choosing these settings (make sure to give credit to guy's instructions)
+4. Open file in hex editor and copy/paste into a txt file. Save
+5. Open txt file (in vi or otherwise) and run regex command: %s/ /,0x/gi (put this in code formatting)
+6. After running command, make sure to additionally add 0x to the beginning fo the first hex value in the file. Get the size of array (one easy way to do this is by doing an "edit>find" on 0x)
+7. Save, copy text, and paste into an array into Arduino in a header file (example uses SoundData.h). Array container works thusly: const unsigned char StarWarsWav[SIZE_OF_ARRAY] = { YOUR_ARRAY };
 
 ## Recognition
+We relied heavily on this website for speaker audio, including the library that its owner created:
+https://www.xtronical.com
+
 Microphone Code:
 * How to do microphone driver init: https://github.com/maspetsberger/esp32-i2s-mems/blob/master/examples/InputSerialPlotter/InputSerialPlotter.ino
 
