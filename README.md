@@ -50,6 +50,7 @@ Speaker Code:
 
 Audio Streaming:
 * https://www.hackster.io/julianfschroeter/stream-your-audio-on-the-esp32-2e4661
+* https://github.com/Edzelf/ESP32-Radio
 
 ESP32 Radio:
 * https://github.com/Edzelf/ESP32-Radio
