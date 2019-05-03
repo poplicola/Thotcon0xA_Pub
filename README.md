@@ -19,7 +19,7 @@ Some quick notes about pins on the 0xA badge:
 There are six backlit LEDs on the Thotcon 0xA badge. An example of how to activate these LEDs and utilize them is located in the LEDs directory of this GitHub.
 
 ## SoundBoard
-The sound board maps five sounds to the five capacitive touch pads on the badge. The SoundBoard utilizes the audio library [XT_DAC_AUDIO](https://www.xtronical.com/the-dacaudio-library-download-and-installation/). Make sure this is included in any project that utilizes the speaker. Example code for this is located in in the SoundBoard directory.
+The sound board maps sounds to three of the capacitive touch pads on the badge. The SoundBoard utilizes the audio library [XT_DAC_AUDIO](https://www.xtronical.com/the-dacaudio-library-download-and-installation/). Make sure this is included in any project that utilizes the speaker. Example code for this is located in in the SoundBoard directory.
 
 Also note that all audio files must be converted before being uploaded to the badge. A brief explanation of how to convert audio for the badge follows.
 
