@@ -55,3 +55,5 @@ ESP32 Radio:
 
 Documentation
 * Espressif documentation on using audio with their chip. Notable, they mention one main consideration being “Ethernet interface to obtain an audio data stream from the internet” https://docs.espressif.com/projects/esp-adf/en/latest/design-guide/project-design.html
+
+"_History_ repeats itself, first as tragedy, second as farce." - Karl Marx
