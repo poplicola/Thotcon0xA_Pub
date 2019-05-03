@@ -26,6 +26,8 @@ The Thotcon 0xA badge comes with a microphone that allows for streaming audio. A
 
 Also note that all audio files must be converted before being uploaded to the badge. A brief explanation of how to convert audio for the badge follows.
 
+On the server side, run this command in Terminal `nc -nlvp 4444 | aplay -b 16000 -f S32LE`
+
 ### Converting Audio for the Badge
 1. Download [Audacity](https://sourceforge.net/projects/audacity/)
 2. Download a hex editor (suggestions for [Mac](https://ridiculousfish.com/hexfiend/), [Linux](https://github.com/bwrsandman/Bless), and [Windows](https://mh-nexus.de/en/hxd/))
