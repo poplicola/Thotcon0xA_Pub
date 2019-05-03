@@ -4,13 +4,12 @@
 The Thotcon 0xA badge runs off the Sparkfun ESP32 Thingdev board. Sparkfun has an excellent hookup guide [over on their website](https://learn.sparkfun.com/tutorials/esp32-thing-hookup-guide#introduction).
 
 Some quick notes about pins on the 0xA badge:
-* The touch pads for the device are on  t4, 6, 3, 7, 2
-* LEDS: 21, 19, 18, 17, 16, 5 
+* The touch pads for the device are on  t4, 6, 3, 7, 2. These are, respectively, right, up, left, down, and select.
+* LEDS: 21, 19, 18, 17, 16, 5. These are, respectively, left ear, left eye, left mustache, right ear, right eye, right mustache.
 * Speaker: 26
 * Mic Pin: 25
 * Mic_clock: 23
 * Mic_ws: 22
-//Jay to put in image that maps all of these to where they belong
 
 ## Getting Started with the Badge
 1. Download/Install [Arduino](https://www.arduino.cc/)
@@ -29,8 +28,8 @@ Also note that all audio files must be converted before being uploaded to the ba
 
 ### Converting Audio for the Badge
 1. Download [Audacity](https://sourceforge.net/projects/audacity/)
-2. Download a hex editor (suggestions for Mac, Linux, and Windows)
-3. Open file in Audacity and convert to wav by choosing these settings (make sure to give credit to guy's instructions)
+2. Download a hex editor (suggestions for [Mac](https://ridiculousfish.com/hexfiend/), [Linux](https://github.com/bwrsandman/Bless), and [Windows](https://mh-nexus.de/en/hxd/))
+3. Open file in Audacity and convert to wav by choosing the appropriate settings (instructions [here](https://www.xtronical.com/basics/audio/dacs-for-sound/playing-wav-files/))
 4. Open file in hex editor and copy/paste into a txt file. Save
 5. Open txt file (in vi or otherwise) and run regex command: `%s/ /,0x/gi`
 6. After running command, make sure to additionally add 0x to the beginning of the first hex value in the file.
