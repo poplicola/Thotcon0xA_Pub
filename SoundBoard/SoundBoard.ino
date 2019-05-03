@@ -1,11 +1,11 @@
 #include "SoundData.h";
-#include "Game_Audio.h";
+#include "XT_DAC_Audio.h";
 
-Game_Audio_Class GameAudio(26,0); 
+XT_DAC_Audio_Class DacAudio(26,0); 
 
-Game_Audio_Wav_Class soundHorn(airhorn);
-Game_Audio_Wav_Class soundTrombone(trombone);   
-//Game_Audio_Wav_Class soundDixie(dixie);                       
+XT_Wav_Class soundTrombone(trombone); 
+XT_Wav_Class soundHorn(airhorn);  
+XT_Wav_Class soundDixie(dixie);                       
                                       
 int threshold = 40;
 bool touch1detected = false;
@@ -44,22 +44,29 @@ void setup() {
 }
 
 void loop() {
+  DacAudio.FillBuffer();
   if (touch1detected){
     touch1detected = false;
-    GameAudio.PlayWav(&soundHorn, true, 1.0);
+    DacAudio.Play(&soundHorn);
     delay(200);
   }
 
   if (touch2detected){
+    delay(200);
+    DacAudio.FillBuffer();
     touch2detected = false;
-    GameAudio.PlayWav(&soundTrombone, true, 3.0);
+    soundTrombone.Speed=2;
+    DacAudio.Play(&soundTrombone);
     delay(200);
   }
-  /*
+ 
   if (touch3detected){
-    touch3detected = false;
-    GameAudio.PlayWav(&soundDixie, true, 2.0);
     delay(200);
-  }*/
+    DacAudio.FillBuffer();
+    touch3detected = false;  
+    soundDixie.Speed=2;
+    DacAudio.Play(&soundDixie);
+    delay(200);
+  }
 
 }
