@@ -26,7 +26,7 @@ Also note that all audio files must be converted before being uploaded to the ba
 ### Converting Audio for the Badge
 1. Download [Audacity](https://sourceforge.net/projects/audacity/)
 2. Download a hex editor (suggestions for [Mac](https://ridiculousfish.com/hexfiend/), [Linux](https://github.com/bwrsandman/Bless), and [Windows](https://mh-nexus.de/en/hxd/))
-3. Open file in Audacity and convert to wav by choosing the appropriate settings (instructions [here](https://www.xtronical.com/basics/audio/dacs-for-sound/playing-wav-files/))
+3. Open file in Audacity and convert to correct format by choosing the appropriate settings (instructions [here](https://www.xtronical.com/basics/audio/dacs-for-sound/playing-wav-files/))
 4. Open file in hex editor and copy/paste into a txt file. Save
 5. Open txt file (in vi or otherwise) and run regex command: `%s/ /,0x/gi`
 6. After running command, make sure to additionally add 0x to the beginning of the first hex value in the file.
